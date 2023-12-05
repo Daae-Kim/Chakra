@@ -35,7 +35,7 @@ qa팀에서 하는 것 처럼 테스트
 
 jest 가 테스트 파일을 찾는 방법.
 
-jest : test, spec, tests(촐더안에 있는 모든 파일 실행 → 통합테스트)
+jest : test, spec, tests(폴더안에 있는 모든 파일 실행 → 통합테스트)
 
 ![Untitled](../../Picture/jest파일구조.png)
 

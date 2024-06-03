@@ -1,4 +1,4 @@
-? BaseEntity란
+### ? BaseEntity란
 
 ```java
 public class TeamEntity extends BaseEntity {
@@ -8,7 +8,7 @@ public class TeamEntity extends BaseEntity {
 
 많은 엔티티에 공통으로 필요한 컬럼이 있을때, 이를 BaseEntity로 만들어서 BaseEntity를 상속받도록 하면 편리하게 사용할 수 있다.
 
-? PreRemove란
+### ? PreRemove란
 
 eventListener.(이벤트를 관찰하고 있다가 발생하면 특정 동작을 실행)
 
@@ -16,7 +16,7 @@ eventListener.(이벤트를 관찰하고 있다가 발생하면 특정 동작을
 
 → 엔티티를 영속성 컨텍스트에서 삭제하기 직전에 호출된다.
 
-? Listener를 사용하는 이유
+### ? Listener를 사용하는 이유
 
 EntityListener는 엔티티 라이프 사이클 중 특정 시점에 원하는 로직을 처리하도록 한다.
 

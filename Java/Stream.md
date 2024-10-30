@@ -49,3 +49,42 @@ Stream<String> strStream2 = Arrays.stream(strArr);
 - 스트림이 제공하는 연산은 중간연산과 최종 연산으로 분류할 수 있다.
 - 중간연산은 연산결과를 스트림으로 반환하기 때문에 중간연산을 연속해서 연결할 수 있다.
 - 반면 최종연산은 스트림의 요소를 소모하면서 연산을 수행하므로 단 한번만 연산이 가능하다.
+
+### 스트림의 중간 연산자
+
+- concat() 두 스트림을 연결 (단, 각 스트림의 요소는 같은 타입이어야 한다.)
+
+    ```java
+    Stream.concat(strs1, strs2);
+    ```
+
+- 스트림 자르기 - skip(), limit()
+
+    ```java
+    IntStream intStream = IntStream.rangeClosed(1,10);
+    intStream.skip(3).limit(5).forEach(System.out.print);
+    ```
+
+- 요소 걸러내기 - filter(), distinct()
+   - distinct : 중복 제거
+   - filter : 조건에 맞지 않는 요소 걸러냄
+
+    ```java
+    IntStream intStream = IntStream.rangeClosed(1,10);
+    intStream.filter(i -> i%2 ==0 ).forEach(System.out.print);
+    ```
+
+- 정렬하기 - sorted()
+- 변환 - map()
+   - Stream<R> map(Function<? super T,? extends R> mapper)
+- 조회 - peek()
+   - 스트림의 요소를 소모하지 않는 연산이다.
+   - 연산과 연산 사이에 올바르게 처리되었는지 확인하는 용도.
+   - peek(s → System.out.printf(”filename = %s%n”,s))
+   - filter()나 map()의 결과를 확인할 때 유용하게 사용될 수 있다.
+- 기본형 스트림
+   - 숫자를 다루는 편리한 메소드 제공 : sum(), max(), min()
+   - → 최종 연산에 해당하기 때문에 연속해서 사용할 수는 없음.
+- CharSequence 에 정의된 char()
+   - IntStream charStream = “12345”.chars();
+   - int charSum = charStream.map(ch → ch-’0’).sum(); // charSum = 15
